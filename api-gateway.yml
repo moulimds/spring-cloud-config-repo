@@ -5,3 +5,12 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - gateway
