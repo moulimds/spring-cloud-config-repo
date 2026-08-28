@@ -50,6 +50,11 @@ spring:
               predicates:
                 - Path=/api/v1/payments/**
 
+            - id: notification-service
+              uri: lb://NOTIFICATION-SERVICE
+              predicates:
+                - Path=/api/v1/notifications/**
+
 management:
   endpoint:
     gateway:
