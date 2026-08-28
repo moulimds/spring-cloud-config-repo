@@ -28,6 +28,12 @@ spring:
               uri: lb://INVENTORY-SERVICE
               predicates:
                 - Path=/api/v1/inventory/**
+            
+
+            - id: search-service
+              uri: lb://SEARCH-SERVICE
+              predicates:
+                - Path=/api/v1/search/**
 
 management:
   endpoint:
