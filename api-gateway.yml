@@ -75,6 +75,16 @@ spring:
               predicates:
                 - Path=/api/v1/shipments/**
 
+            - id: delivery-agent-service
+              uri: lb://delivery-agent-service
+              predicates:
+                - Path=/api/v1/delivery-agents/**
+
+            - id: invoice-service
+              uri: lb://invoice-service
+              predicates:
+                - Path=/api/v1/invoices/**
+
 management:
   endpoint:
     gateway:
