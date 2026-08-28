@@ -91,6 +91,11 @@ spring:
               predicates:
                 - Path=/api/v1/reviews/**
 
+            - id: recommendation-service
+              uri: lb://RECOMMENDATION-SERVICE
+              predicates:
+                - Path=/api/v1/recommendations/**
+
 management:
   endpoint:
     gateway:
