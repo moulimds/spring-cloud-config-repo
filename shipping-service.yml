@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: shipping-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/shipping_db
+    username: root
+    password: "@Bluemmon257"
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8093
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

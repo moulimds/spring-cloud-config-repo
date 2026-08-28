@@ -60,6 +60,21 @@ spring:
               predicates:
                 - Path=/wishlist/**
 
+            - id: coupon-service
+              uri: lb://COUPON-SERVICE
+              predicates:
+                - Path=/coupons/**   
+
+            - id: wallet-service
+              uri: lb://WALLET-SERVICE
+              predicates:
+                - Path=/wallets/** 
+
+            - id: shipping-service
+              uri: lb://SHIPPING-SERVICE
+              predicates:
+                - Path=/api/v1/shipments/**
+
 management:
   endpoint:
     gateway:
