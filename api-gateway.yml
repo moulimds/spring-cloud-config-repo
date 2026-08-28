@@ -85,6 +85,12 @@ spring:
               predicates:
                 - Path=/api/v1/invoices/**
 
+
+            - id: review-service
+              uri: lb://REVIEW-SERVICE
+              predicates:
+                - Path=/api/v1/reviews/**
+
 management:
   endpoint:
     gateway:

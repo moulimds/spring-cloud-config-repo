@@ -1,2 +1,8 @@
 eshoppingzone:
   message: "Config Server is working!"
+
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 2
