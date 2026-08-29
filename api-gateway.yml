@@ -3,6 +3,23 @@ spring:
     gateway:
       server:
         webflux:
+
+          globalcors:
+            add-to-simple-url-handler-mapping: true
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "http://localhost:5173"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                  - PATCH
+                allowedHeaders:
+                  - "*"
+
           discovery:
             locator:
               enabled: true
@@ -28,7 +45,6 @@ spring:
               uri: lb://INVENTORY-SERVICE
               predicates:
                 - Path=/api/v1/inventory/**
-            
 
             - id: search-service
               uri: lb://SEARCH-SERVICE
@@ -63,12 +79,12 @@ spring:
             - id: coupon-service
               uri: lb://COUPON-SERVICE
               predicates:
-                - Path=/coupons/**   
+                - Path=/coupons/**
 
             - id: wallet-service
               uri: lb://WALLET-SERVICE
               predicates:
-                - Path=/wallets/** 
+                - Path=/wallets/**
 
             - id: shipping-service
               uri: lb://SHIPPING-SERVICE
@@ -84,7 +100,6 @@ spring:
               uri: lb://invoice-service
               predicates:
                 - Path=/api/v1/invoices/**
-
 
             - id: review-service
               uri: lb://REVIEW-SERVICE
