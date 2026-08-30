@@ -35,3 +35,13 @@ eureka:
 
 jwt:
   secret: "EShoppingZoneSuperSecretKeyForJWT2026SecureKey123456789"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+      cors:
+        allowed-origins: "http://localhost:5173"
+        allowed-methods: GET,OPTIONS
+        allowed-headers: "*"
